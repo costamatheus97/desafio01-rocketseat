@@ -52,7 +52,7 @@ server.put('/projects/:id', checkingProject, (req, res) => {
 
     project.title = req.body.title
 
-    return res.json(project)
+    return res.json(projects)
 })
 
 server.delete('/projects/:id', checkingProject, (req, res) => {
@@ -60,7 +60,7 @@ server.delete('/projects/:id', checkingProject, (req, res) => {
 
     projects.splice(item, 1)
 
-    return res.json(project)
+    return res.json(projects)
 })
 
 server.post('/projects/:id/tasks', checkingProject, (req, res) => {
@@ -69,7 +69,7 @@ const project = projects.find(i = i.id == req.params.id)
 
 project.tasks.push(req.body.title)
 
-return res.json(project)
+return res.json(projects)
 
 })
 
